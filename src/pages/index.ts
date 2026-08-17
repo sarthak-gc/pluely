@@ -9,3 +9,5 @@ export { default as Shortcuts } from "./shortcuts";
 export { default as Audio } from "./audio";
 export { default as Screenshot } from "./screenshot";
 export { default as Responses } from "./responses";
+export { default as Checklists } from "./checklists";
+export { default as Recordings } from "./recordings";

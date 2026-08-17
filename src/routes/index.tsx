@@ -1,16 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
-  Dashboard,
   App,
   SystemPrompts,
   ViewChat,
-  Settings,
-  DevSpace,
   Shortcuts,
-  Audio,
-  Screenshot,
   Chats,
-  Responses,
+  Checklists,
+  Recordings,
+  DevSpace,
 } from "@/pages";
 import { DashboardLayout } from "@/layouts";
 
@@ -20,15 +17,14 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/checklists" element={<Checklists />} />
+          <Route path="/recordings" element={<Recordings />} />
           <Route path="/chats" element={<Chats />} />
-          <Route path="/system-prompts" element={<SystemPrompts />} />
           <Route path="/chats/view/:conversationId" element={<ViewChat />} />
+          <Route path="/system-prompts" element={<SystemPrompts />} />
           <Route path="/shortcuts" element={<Shortcuts />} />
-          <Route path="/screenshot" element={<Screenshot />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/audio" element={<Audio />} />
-          <Route path="/responses" element={<Responses />} />
+          {/* Not in the nav, but kept reachable by URL — it's the only place
+              to configure the STT provider if the seeded key needs replacing. */}
           <Route path="/dev-space" element={<DevSpace />} />
         </Route>
       </Routes>

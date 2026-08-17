@@ -19,6 +19,12 @@ export const useWindowResize = () => {
         return;
       }
 
+      // The call copilot keeps the window expanded for the whole call, so its
+      // own DOM updates must not trigger the collapse-on-mutation behaviour.
+      if (!expanded && document.body.dataset.copilotActive === "true") {
+        return;
+      }
+
       const newHeight = expanded ? 600 : 54;
 
       await invoke("set_window_height", {

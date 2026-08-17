@@ -5,6 +5,14 @@ import { AppProvider, ThemeProvider } from "./contexts";
 import "./global.css";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import AppRoutes from "./routes";
+// TEMPORARY — see src/lib/dev-seed.ts. Remove both before committing.
+import { applyDevSeed } from "./lib/dev-seed";
+
+// Must run before AppProvider mounts, since it loads the STT config from
+// localStorage in its initial effect.
+if (import.meta.env.DEV) {
+  applyDevSeed();
+}
 
 const currentWindow = getCurrentWindow();
 const windowLabel = currentWindow.label;

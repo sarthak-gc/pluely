@@ -17,5 +17,19 @@ pub fn migrations() -> Vec<Migration> {
             sql: include_str!("migrations/chat-history.sql"),
             kind: MigrationKind::Up,
         },
+        // Migration 3: Call checklists and per-session recordings
+        Migration {
+            version: 3,
+            description: "create_checklists_and_call_sessions",
+            sql: include_str!("migrations/checklists.sql"),
+            kind: MigrationKind::Up,
+        },
+        // Migration 4: Keep the full transcript alongside the per-item verdicts
+        Migration {
+            version: 4,
+            description: "add_call_session_transcript",
+            sql: include_str!("migrations/call-transcript.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }

@@ -2,6 +2,8 @@
 mod activate;
 mod api;
 mod capture;
+mod claude_cli;
+mod recordings;
 mod db;
 mod shortcuts;
 mod window;
@@ -77,6 +79,11 @@ pub fn run() {
             window::open_dashboard,
             window::toggle_dashboard,
             window::move_window,
+            claude_cli::ask_claude_cli,
+            recordings::save_recording,
+            recordings::list_recordings,
+            recordings::read_recording,
+            recordings::delete_recording,
             capture::capture_to_base64,
             capture::start_screen_capture,
             capture::capture_selected_area,
