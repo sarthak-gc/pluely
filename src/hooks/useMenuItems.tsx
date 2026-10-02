@@ -9,6 +9,7 @@ import {
   GlobeIcon,
   BugIcon,
   ListChecksIcon,
+  KeyRoundIcon,
 } from "lucide-react";
 import { invoke } from "@tauri-apps/api/core";
 import { useApp } from "@/contexts";
@@ -47,6 +48,11 @@ export const useMenuItems = () => {
       icon: SquareSlashIcon,
       label: "Cursor & Shortcuts",
       href: "/shortcuts",
+    },
+    {
+      icon: KeyRoundIcon,
+      label: "API Keys",
+      href: "/dev-space",
     },
   ];
 

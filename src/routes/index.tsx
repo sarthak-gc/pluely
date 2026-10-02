@@ -23,8 +23,6 @@ export default function AppRoutes() {
           <Route path="/chats/view/:conversationId" element={<ViewChat />} />
           <Route path="/system-prompts" element={<SystemPrompts />} />
           <Route path="/shortcuts" element={<Shortcuts />} />
-          {/* Not in the nav, but kept reachable by URL — it's the only place
-              to configure the STT provider if the seeded key needs replacing. */}
           <Route path="/dev-space" element={<DevSpace />} />
         </Route>
       </Routes>
